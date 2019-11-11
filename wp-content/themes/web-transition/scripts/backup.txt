@@ -1,0 +1,17 @@
+		/*****plugin simple job Board Max Decourtray*************/
+        $('.sjb-detail .job-description .job-features').remove();
+
+        $('.sjb-detail').prepend($('.sjb-detail .job-features'));
+        $('.sjb-detail').after($('.jobpost-form'));
+        $('.sjb-detail .job-features').wrapInner('<div class="borderJobFeatures">');
+        $('.jobpost-form').wrapAll('<div class="formulaireCandidat">');
+        $('.formulaireCandidat').prepend('<p class="buttonForm"><button>Postuler en ligne</button></p>');
+        $('.jobpost-form').hide();
+        $('.buttonForm button').click(function(){
+            $('.jobpost-form').slideDown(800);
+            $(this).fadeOut(800);
+            $('html, body').animate({
+                    scrollTop: $('.jobpost-form h3').offset().top
+                }, 800);
+        });
+         /******End plugin*/

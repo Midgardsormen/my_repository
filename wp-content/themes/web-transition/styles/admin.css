@@ -1,0 +1,196 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,500,700,900);
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700,800');
+li.wp-has-submenu.wp-not-current-submenu.menu-top.recrutement.ame-has-custom-dashicon{
+  background:#50276f!important;
+}
+li.wp-has-submenu.menu-top.recrutement.ame-has-custom-dashicon.wp-has-current-submenu.wp-menu-open ul{
+  background: #44188c;
+}
+ #adminmenu li.wp-has-current-submenu.menu-top.recrutement a.wp-has-current-submenu{
+  background: #44188c;
+}
+a.wp-has-submenu.menu-top.recrutement.ame-has-custom-dashicon.wp-has-current-submenu.wp-menu-open{
+  background:#9d0acd!important;
+}
+li.wp-has-submenu.wp-not-current-submenu.menu-top.recrutement.ame-has-custom-dashicon a:hover{
+  background: #2c1b31!important;
+  color: #b15ddc!important;
+}
+#adminmenu li.menu-top.recrutement a:focus div.wp-menu-image:before, #adminmenu li.opensub.menu-top.recrutement div.wp-menu-image:before, #adminmenu li.menu-top.recrutement:hover div.wp-menu-image:before, #adminmenu li.menu-top.recrutement:hover, #adminmenu li.menu-top.recrutement.opensub>a.menu-top, #adminmenu li.menu-top.recrutement>a.menu-top:focus{
+  color: #b15ddc!important;
+}
+
+#cf7d-admin-action-frm table.wp-list-table.widefat.fixed.striped.posts.cf7d-admin-table th[data-key~="(caché)"],
+#cf7d-admin-action-frm table.wp-list-table.widefat.fixed.striped.posts.cf7d-admin-table td[data-head~="(caché)"]{display: none;}
+
+p.mailButton {
+	display: block;
+	text-align: center;
+}
+p.mailButton:before{
+	content: "Envoyer un mail à ce candidat";
+	display: block;
+	margin-bottom: 10px;
+	text-align: center;
+}
+p.mailButton a{
+	display: inline-block;
+	text-align: center;
+	text-decoration: none !important;
+	padding: 5px 15px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 12px;
+	line-height: 1.1;
+	max-width: 140px;
+	margin: 5px 0.5%;
+	color: #fff;
+	background: #50276f;
+	height: 40px;
+}
+p.mailButton a span{
+	display: inline-block;
+	vertical-align: middle;
+}
+p.mailButton a span+span{
+	height: 100%;width: 0;
+}
+p.mailButton a+a{
+	background: #35276f;
+
+}
+p.mailButton a+a+a{
+	background: #27376f;
+
+}
+p.mailButton a+a+a+a{
+	background:#1d4b67;
+
+}
+p.mailButton a+a+a+a+a{
+	background:#1d6467;
+
+}
+p.mailButton a+a+a+a+a+a {
+    background: #671d1d;
+}
+p.mailButton a+a+a+a+a+a+a {
+    background: #4f7439;
+}
+p.mailButton a:hover{
+	opacity: .7;
+}
+textarea.field-Lettredemotivationcommentaire{
+	min-height: 200px;
+}
+@media screen and (max-width:1200px){
+th.manage-column {
+    font-size: 0.9em;
+    padding: 5px;
+}
+.widefat td, .widefat td ol, .widefat td p, .widefat td ul{
+	font-size: .9em;
+}
+}
+@media screen and (max-width:980px){
+	div#TB_window {
+	    max-width: 80%;
+
+	}
+	.our-body-class .edit-popup input, .our-body-class .edit-popup select, .our-body-class .edit-popup textarea, .edit-check-radio{
+		width: 100%!important;
+	}
+
+	#cf7d-admin-action-frm table.wp-list-table.widefat.fixed.striped.posts.cf7d-admin-table tr{
+		display: inline-block;
+		padding-bottom: 10px;
+		width: 50%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	#cf7d-admin-action-frm table.wp-list-table.widefat.fixed.striped.posts.cf7d-admin-table tr td{
+		display: block;
+		padding: 2px 10px;
+	}
+	#cf7d-admin-action-frm table.wp-list-table.widefat.fixed.striped.posts.cf7d-admin-table tr td:before{
+		content: attr(data-head);
+		display: inline-block;
+		font-weight: bold;width: 22%;
+		min-width: 125px;
+	}
+	#cf7d-admin-action-frm table.wp-list-table.widefat.fixed.striped.posts.cf7d-admin-table tr:not(.inline-edit-row):not(.no-items) td:not(.column-primary)::before{
+		position: relative;
+	}
+	#cf7d-admin-action-frm table.wp-list-table.widefat.fixed.striped.posts.cf7d-admin-table thead tr th+th,
+	#cf7d-admin-action-frm table.wp-list-table.widefat.fixed.striped.posts.cf7d-admin-table tfoot tr th+th{display: none!important;}
+
+}
+@media screen and (max-width:790px){
+		#cf7d-admin-action-frm table.wp-list-table.widefat.fixed.striped.posts.cf7d-admin-table tr{
+		display: block;
+		width: 100%;
+	}
+}
+@media screen and (max-width:782px){
+	#cf7d-admin-action-frm .tablenav.top .actions{
+		display: block;
+	}
+}
+@media screen and (max-width:700px){
+	div#TB_window {
+	    width: 80%!important;
+	    margin-left: 10%!important;
+	    left: 0!important;
+	    height: 90%!important;
+	    margin-top: 0!important;
+	    top: 5%!important;
+	}
+}
+@media screen and (max-width:580px){
+	.our-class .date-filter.from-to input[type="text"]{
+		margin: 10px !important;
+		vertical-align: middle;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+	}
+	.from-to-date-search, .type-something{
+		margin-right: 0!important;
+	}
+	input#start_date, input#end_date{
+		width:calc((100% - 174px)/2);
+	}
+	.type-something {
+	    display: block;
+	    margin-bottom: 20px;
+	    width: 100%;
+	    -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    box-sizing: border-box;
+	}
+	.type-something input{
+		width: 100%;
+		max-width: calc(100% - 120px);
+	}
+	div.reset-class {
+	    clear: both;
+	    float: none;
+	}
+}
+@media screen and (max-width: 480px){
+	#cf7d-admin-action-frm table.wp-list-table.widefat.fixed.striped.posts.cf7d-admin-table tr td:before{
+		display: block !important;
+	}
+}
+@media screen and (max-width: 380px){
+
+		input#start_date, input#end_date, .our-class .date-filter.from-to .type-something input{
+			width:100%;
+			margin: 10px 0!important;
+			max-width: none !important;
+		}
+}
