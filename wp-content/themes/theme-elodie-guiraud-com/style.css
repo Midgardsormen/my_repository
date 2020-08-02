@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: Thème elodie-guiraud.com
 Theme URI: http://underscores.me/
@@ -21,7 +22,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -49,19 +49,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
-
 /* Normalize
 --------------------------------------------- */
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
 /* Document
 	 ========================================================================== */
-
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -73,7 +68,6 @@ html {
 
 /* Sections
 	 ========================================================================== */
-
 /**
  * Remove the margin in all browsers.
  */
@@ -99,7 +93,6 @@ h1 {
 
 /* Grouping content
 	 ========================================================================== */
-
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -121,7 +114,6 @@ pre {
 
 /* Text-level semantics
 	 ========================================================================== */
-
 /**
  * Remove the gray background on active links in IE 10.
  */
@@ -187,7 +179,6 @@ sup {
 
 /* Embedded content
 	 ========================================================================== */
-
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -197,7 +188,6 @@ img {
 
 /* Forms
 	 ========================================================================== */
-
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -343,7 +333,6 @@ textarea {
 
 /* Interactive
 	 ========================================================================== */
-
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
@@ -360,7 +349,6 @@ summary {
 
 /* Misc
 	 ========================================================================== */
-
 /**
  * Add the correct display in IE 10+.
  */
@@ -377,7 +365,6 @@ template {
 
 /* Box sizing
 --------------------------------------------- */
-
 /* Inherit box-sizing to more easily change it's value on a component level.
 @link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
@@ -393,7 +380,6 @@ html {
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
-
 /* Typography
 --------------------------------------------- */
 body,
@@ -473,6 +459,7 @@ big {
 --------------------------------------------- */
 body {
 	background: #fff;
+	position: relative;
 }
 
 hr {
@@ -540,9 +527,7 @@ a:visited {
 	color: #800080;
 }
 
-a:hover,
-a:focus,
-a:active {
+a:hover, a:focus, a:active {
 	color: #191970;
 }
 
@@ -550,8 +535,7 @@ a:focus {
 	outline: thin dotted;
 }
 
-a:hover,
-a:active {
+a:hover, a:active {
 	outline: 0;
 }
 
@@ -577,8 +561,7 @@ input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
 }
 
-button:active,
-button:focus,
+button:active, button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
@@ -640,16 +623,16 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
 	display: block;
 	width: 100%;
+	position: absolute;
+	top: 0;
 }
 
 .main-navigation ul {
@@ -704,20 +687,16 @@ textarea {
 }
 
 @media screen and (min-width: 37.5em) {
-
 	.menu-toggle {
 		display: none;
 	}
-
 	.main-navigation ul {
 		display: flex;
 	}
 }
 
-.site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
 .post-navigation {
 	margin: 0 0 1.5em;
 }
@@ -877,10 +856,8 @@ textarea {
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
-
 /* Jetpack infinite scroll
 --------------------------------------------- */
-
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
@@ -895,10 +872,8 @@ textarea {
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
-
 /* Accessibility
 --------------------------------------------- */
-
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
@@ -941,20 +916,16 @@ textarea {
 /* Alignments
 --------------------------------------------- */
 .alignleft {
-
 	/*rtl:ignore*/
 	float: left;
-
 	/*rtl:ignore*/
 	margin-right: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 .alignright {
-
 	/*rtl:ignore*/
 	float: right;
-
 	/*rtl:ignore*/
 	margin-left: 1.5em;
 	margin-bottom: 1.5em;
@@ -967,3 +938,950 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+/* Grid
+--------------------------------------------- */
+.grid, [class*="grid-auto-"] {
+	display: grid;
+	grid-gap: var(--grid-gap, 0);
+}
+
+.grid {
+	--grid-cols: 12;
+	grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+
+.grid > * {
+	grid-column: span var(--span, 12)/span var(--span, 12);
+}
+
+.grid-auto-xs, .grid-auto-sm, .grid-auto-md, .grid-auto-lg, .grid-auto-xl {
+	grid-template-columns: repeat(auto-fit, minmax(var(--col-min-width), 1fr));
+}
+
+.grid-auto-xs {
+	--col-min-width: 8rem;
+}
+
+.grid-auto-sm {
+	--col-min-width: 10rem;
+}
+
+.grid-auto-md {
+	--col-min-width: 15rem;
+}
+
+.grid-auto-lg {
+	--col-min-width: 20rem;
+}
+
+.grid-auto-xl {
+	--col-min-width: 25rem;
+}
+
+.grid-auto-cols {
+	grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+.grid-gap-xxxxs {
+	--grid-gap: var(--space-xxxxs, 0.125rem);
+}
+
+.grid-gap-xxxs {
+	--grid-gap: var(--space-xxxs, 0.25rem);
+}
+
+.grid-gap-xxs {
+	--grid-gap: var(--space-xxs, 0.375rem);
+}
+
+.grid-gap-xs {
+	--grid-gap: var(--space-xs, 0.5rem);
+}
+
+.grid-gap-sm {
+	--grid-gap: var(--space-sm, 0.75rem);
+}
+
+.grid-gap-md {
+	--grid-gap: var(--space-md, 1.25rem);
+}
+
+.grid-gap-lg {
+	--grid-gap: var(--space-lg, 2rem);
+}
+
+.grid-gap-xl {
+	--grid-gap: var(--space-xl, 3.25rem);
+}
+
+.grid-gap-xxl {
+	--grid-gap: var(--space-xxl, 5.25rem);
+}
+
+.grid-gap-xxxl {
+	--grid-gap: var(--space-xxxl, 8.5rem);
+}
+
+.grid-gap-xxxxl {
+	--grid-gap: var(--space-xxxxl, 13.75rem);
+}
+
+.col-1 {
+	--span: 1;
+}
+
+.col-start-1 {
+	grid-column-start: 1;
+}
+
+.col-end-2 {
+	grid-column-end: 2;
+}
+
+.col-2 {
+	--span: 2;
+}
+
+.col-start-2 {
+	grid-column-start: 2;
+}
+
+.col-end-3 {
+	grid-column-end: 3;
+}
+
+.col-3 {
+	--span: 3;
+}
+
+.col-start-3 {
+	grid-column-start: 3;
+}
+
+.col-end-4 {
+	grid-column-end: 4;
+}
+
+.col-4 {
+	--span: 4;
+}
+
+.col-start-4 {
+	grid-column-start: 4;
+}
+
+.col-end-5 {
+	grid-column-end: 5;
+}
+
+.col-5 {
+	--span: 5;
+}
+
+.col-start-5 {
+	grid-column-start: 5;
+}
+
+.col-end-6 {
+	grid-column-end: 6;
+}
+
+.col-6 {
+	--span: 6;
+}
+
+.col-start-6 {
+	grid-column-start: 6;
+}
+
+.col-end-7 {
+	grid-column-end: 7;
+}
+
+.col-7 {
+	--span: 7;
+}
+
+.col-start-7 {
+	grid-column-start: 7;
+}
+
+.col-end-8 {
+	grid-column-end: 8;
+}
+
+.col-8 {
+	--span: 8;
+}
+
+.col-start-8 {
+	grid-column-start: 8;
+}
+
+.col-end-9 {
+	grid-column-end: 9;
+}
+
+.col-9 {
+	--span: 9;
+}
+
+.col-start-9 {
+	grid-column-start: 9;
+}
+
+.col-end-10 {
+	grid-column-end: 10;
+}
+
+.col-10 {
+	--span: 10;
+}
+
+.col-start-10 {
+	grid-column-start: 10;
+}
+
+.col-end-11 {
+	grid-column-end: 11;
+}
+
+.col-11 {
+	--span: 11;
+}
+
+.col-start-11 {
+	grid-column-start: 11;
+}
+
+.col-end-12 {
+	grid-column-end: 12;
+}
+
+.col-12 {
+	--span: 12;
+}
+
+.col-start-12 {
+	grid-column-start: 12;
+}
+
+.col-end-13 {
+	grid-column-end: 13;
+}
+
+.col-start {
+	grid-column-start: 1;
+}
+
+.col-end {
+	grid-column-end: -1;
+}
+
+@media (min-width: 32rem) {
+	.grid-auto-xs\@xs {
+		--col-min-width: 8rem;
+	}
+	.grid-auto-sm\@xs {
+		--col-min-width: 10rem;
+	}
+	.grid-auto-md\@xs {
+		--col-min-width: 15rem;
+	}
+	.grid-auto-lg\@xs {
+		--col-min-width: 20rem;
+	}
+	.grid-auto-xl\@xs {
+		--col-min-width: 25rem;
+	}
+	.grid-auto-cols\@xs {
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+	}
+	.col-1\@xs {
+		--span: 1;
+	}
+	.col-start-1\@xs {
+		grid-column-start: 1;
+	}
+	.col-end-2\@xs {
+		grid-column-end: 2;
+	}
+	.col-2\@xs {
+		--span: 2;
+	}
+	.col-start-2\@xs {
+		grid-column-start: 2;
+	}
+	.col-end-3\@xs {
+		grid-column-end: 3;
+	}
+	.col-3\@xs {
+		--span: 3;
+	}
+	.col-start-3\@xs {
+		grid-column-start: 3;
+	}
+	.col-end-4\@xs {
+		grid-column-end: 4;
+	}
+	.col-4\@xs {
+		--span: 4;
+	}
+	.col-start-4\@xs {
+		grid-column-start: 4;
+	}
+	.col-end-5\@xs {
+		grid-column-end: 5;
+	}
+	.col-5\@xs {
+		--span: 5;
+	}
+	.col-start-5\@xs {
+		grid-column-start: 5;
+	}
+	.col-end-6\@xs {
+		grid-column-end: 6;
+	}
+	.col-6\@xs {
+		--span: 6;
+	}
+	.col-start-6\@xs {
+		grid-column-start: 6;
+	}
+	.col-end-7\@xs {
+		grid-column-end: 7;
+	}
+	.col-7\@xs {
+		--span: 7;
+	}
+	.col-start-7\@xs {
+		grid-column-start: 7;
+	}
+	.col-end-8\@xs {
+		grid-column-end: 8;
+	}
+	.col-8\@xs {
+		--span: 8;
+	}
+	.col-start-8\@xs {
+		grid-column-start: 8;
+	}
+	.col-end-9\@xs {
+		grid-column-end: 9;
+	}
+	.col-9\@xs {
+		--span: 9;
+	}
+	.col-start-9\@xs {
+		grid-column-start: 9;
+	}
+	.col-end-10\@xs {
+		grid-column-end: 10;
+	}
+	.col-10\@xs {
+		--span: 10;
+	}
+	.col-start-10\@xs {
+		grid-column-start: 10;
+	}
+	.col-end-11\@xs {
+		grid-column-end: 11;
+	}
+	.col-11\@xs {
+		--span: 11;
+	}
+	.col-start-11\@xs {
+		grid-column-start: 11;
+	}
+	.col-end-12\@xs {
+		grid-column-end: 12;
+	}
+	.col-12\@xs {
+		--span: 12;
+	}
+	.col-start-12\@xs {
+		grid-column-start: 12;
+	}
+	.col-end-13\@xs {
+		grid-column-end: 13;
+	}
+	.col-start\@xs {
+		grid-column-start: 1;
+	}
+	.col-end\@xs {
+		grid-column-end: -1;
+	}
+	.col-start-auto\@xs {
+		grid-column-start: auto;
+	}
+	.col-end-auto\@xs {
+		grid-column-end: auto;
+	}
+}
+
+@media (min-width: 48rem) {
+	.grid-auto-xs\@sm {
+		--col-min-width: 8rem;
+	}
+	.grid-auto-sm\@sm {
+		--col-min-width: 10rem;
+	}
+	.grid-auto-md\@sm {
+		--col-min-width: 15rem;
+	}
+	.grid-auto-lg\@sm {
+		--col-min-width: 20rem;
+	}
+	.grid-auto-xl\@sm {
+		--col-min-width: 25rem;
+	}
+	.grid-auto-cols\@sm {
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+	}
+	.col-1\@sm {
+		--span: 1;
+	}
+	.col-start-1\@sm {
+		grid-column-start: 1;
+	}
+	.col-end-2\@sm {
+		grid-column-end: 2;
+	}
+	.col-2\@sm {
+		--span: 2;
+	}
+	.col-start-2\@sm {
+		grid-column-start: 2;
+	}
+	.col-end-3\@sm {
+		grid-column-end: 3;
+	}
+	.col-3\@sm {
+		--span: 3;
+	}
+	.col-start-3\@sm {
+		grid-column-start: 3;
+	}
+	.col-end-4\@sm {
+		grid-column-end: 4;
+	}
+	.col-4\@sm {
+		--span: 4;
+	}
+	.col-start-4\@sm {
+		grid-column-start: 4;
+	}
+	.col-end-5\@sm {
+		grid-column-end: 5;
+	}
+	.col-5\@sm {
+		--span: 5;
+	}
+	.col-start-5\@sm {
+		grid-column-start: 5;
+	}
+	.col-end-6\@sm {
+		grid-column-end: 6;
+	}
+	.col-6\@sm {
+		--span: 6;
+	}
+	.col-start-6\@sm {
+		grid-column-start: 6;
+	}
+	.col-end-7\@sm {
+		grid-column-end: 7;
+	}
+	.col-7\@sm {
+		--span: 7;
+	}
+	.col-start-7\@sm {
+		grid-column-start: 7;
+	}
+	.col-end-8\@sm {
+		grid-column-end: 8;
+	}
+	.col-8\@sm {
+		--span: 8;
+	}
+	.col-start-8\@sm {
+		grid-column-start: 8;
+	}
+	.col-end-9\@sm {
+		grid-column-end: 9;
+	}
+	.col-9\@sm {
+		--span: 9;
+	}
+	.col-start-9\@sm {
+		grid-column-start: 9;
+	}
+	.col-end-10\@sm {
+		grid-column-end: 10;
+	}
+	.col-10\@sm {
+		--span: 10;
+	}
+	.col-start-10\@sm {
+		grid-column-start: 10;
+	}
+	.col-end-11\@sm {
+		grid-column-end: 11;
+	}
+	.col-11\@sm {
+		--span: 11;
+	}
+	.col-start-11\@sm {
+		grid-column-start: 11;
+	}
+	.col-end-12\@sm {
+		grid-column-end: 12;
+	}
+	.col-12\@sm {
+		--span: 12;
+	}
+	.col-start-12\@sm {
+		grid-column-start: 12;
+	}
+	.col-end-13\@sm {
+		grid-column-end: 13;
+	}
+	.col-start\@sm {
+		grid-column-start: 1;
+	}
+	.col-end\@sm {
+		grid-column-end: -1;
+	}
+	.col-start-auto\@sm {
+		grid-column-start: auto;
+	}
+	.col-end-auto\@sm {
+		grid-column-end: auto;
+	}
+}
+
+@media (min-width: 64rem) {
+	.grid-auto-xs\@md {
+		--col-min-width: 8rem;
+	}
+	.grid-auto-sm\@md {
+		--col-min-width: 10rem;
+	}
+	.grid-auto-md\@md {
+		--col-min-width: 15rem;
+	}
+	.grid-auto-lg\@md {
+		--col-min-width: 20rem;
+	}
+	.grid-auto-xl\@md {
+		--col-min-width: 25rem;
+	}
+	.grid-auto-cols\@md {
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+	}
+	.col-1\@md {
+		--span: 1;
+	}
+	.col-start-1\@md {
+		grid-column-start: 1;
+	}
+	.col-end-2\@md {
+		grid-column-end: 2;
+	}
+	.col-2\@md {
+		--span: 2;
+	}
+	.col-start-2\@md {
+		grid-column-start: 2;
+	}
+	.col-end-3\@md {
+		grid-column-end: 3;
+	}
+	.col-3\@md {
+		--span: 3;
+	}
+	.col-start-3\@md {
+		grid-column-start: 3;
+	}
+	.col-end-4\@md {
+		grid-column-end: 4;
+	}
+	.col-4\@md {
+		--span: 4;
+	}
+	.col-start-4\@md {
+		grid-column-start: 4;
+	}
+	.col-end-5\@md {
+		grid-column-end: 5;
+	}
+	.col-5\@md {
+		--span: 5;
+	}
+	.col-start-5\@md {
+		grid-column-start: 5;
+	}
+	.col-end-6\@md {
+		grid-column-end: 6;
+	}
+	.col-6\@md {
+		--span: 6;
+	}
+	.col-start-6\@md {
+		grid-column-start: 6;
+	}
+	.col-end-7\@md {
+		grid-column-end: 7;
+	}
+	.col-7\@md {
+		--span: 7;
+	}
+	.col-start-7\@md {
+		grid-column-start: 7;
+	}
+	.col-end-8\@md {
+		grid-column-end: 8;
+	}
+	.col-8\@md {
+		--span: 8;
+	}
+	.col-start-8\@md {
+		grid-column-start: 8;
+	}
+	.col-end-9\@md {
+		grid-column-end: 9;
+	}
+	.col-9\@md {
+		--span: 9;
+	}
+	.col-start-9\@md {
+		grid-column-start: 9;
+	}
+	.col-end-10\@md {
+		grid-column-end: 10;
+	}
+	.col-10\@md {
+		--span: 10;
+	}
+	.col-start-10\@md {
+		grid-column-start: 10;
+	}
+	.col-end-11\@md {
+		grid-column-end: 11;
+	}
+	.col-11\@md {
+		--span: 11;
+	}
+	.col-start-11\@md {
+		grid-column-start: 11;
+	}
+	.col-end-12\@md {
+		grid-column-end: 12;
+	}
+	.col-12\@md {
+		--span: 12;
+	}
+	.col-start-12\@md {
+		grid-column-start: 12;
+	}
+	.col-end-13\@md {
+		grid-column-end: 13;
+	}
+	.col-start\@md {
+		grid-column-start: 1;
+	}
+	.col-end\@md {
+		grid-column-end: -1;
+	}
+	.col-start-auto\@md {
+		grid-column-start: auto;
+	}
+	.col-end-auto\@md {
+		grid-column-end: auto;
+	}
+}
+
+@media (min-width: 80rem) {
+	.grid-auto-xs\@lg {
+		--col-min-width: 8rem;
+	}
+	.grid-auto-sm\@lg {
+		--col-min-width: 10rem;
+	}
+	.grid-auto-md\@lg {
+		--col-min-width: 15rem;
+	}
+	.grid-auto-lg\@lg {
+		--col-min-width: 20rem;
+	}
+	.grid-auto-xl\@lg {
+		--col-min-width: 25rem;
+	}
+	.grid-auto-cols\@lg {
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+	}
+	.col-1\@lg {
+		--span: 1;
+	}
+	.col-start-1\@lg {
+		grid-column-start: 1;
+	}
+	.col-end-2\@lg {
+		grid-column-end: 2;
+	}
+	.col-2\@lg {
+		--span: 2;
+	}
+	.col-start-2\@lg {
+		grid-column-start: 2;
+	}
+	.col-end-3\@lg {
+		grid-column-end: 3;
+	}
+	.col-3\@lg {
+		--span: 3;
+	}
+	.col-start-3\@lg {
+		grid-column-start: 3;
+	}
+	.col-end-4\@lg {
+		grid-column-end: 4;
+	}
+	.col-4\@lg {
+		--span: 4;
+	}
+	.col-start-4\@lg {
+		grid-column-start: 4;
+	}
+	.col-end-5\@lg {
+		grid-column-end: 5;
+	}
+	.col-5\@lg {
+		--span: 5;
+	}
+	.col-start-5\@lg {
+		grid-column-start: 5;
+	}
+	.col-end-6\@lg {
+		grid-column-end: 6;
+	}
+	.col-6\@lg {
+		--span: 6;
+	}
+	.col-start-6\@lg {
+		grid-column-start: 6;
+	}
+	.col-end-7\@lg {
+		grid-column-end: 7;
+	}
+	.col-7\@lg {
+		--span: 7;
+	}
+	.col-start-7\@lg {
+		grid-column-start: 7;
+	}
+	.col-end-8\@lg {
+		grid-column-end: 8;
+	}
+	.col-8\@lg {
+		--span: 8;
+	}
+	.col-start-8\@lg {
+		grid-column-start: 8;
+	}
+	.col-end-9\@lg {
+		grid-column-end: 9;
+	}
+	.col-9\@lg {
+		--span: 9;
+	}
+	.col-start-9\@lg {
+		grid-column-start: 9;
+	}
+	.col-end-10\@lg {
+		grid-column-end: 10;
+	}
+	.col-10\@lg {
+		--span: 10;
+	}
+	.col-start-10\@lg {
+		grid-column-start: 10;
+	}
+	.col-end-11\@lg {
+		grid-column-end: 11;
+	}
+	.col-11\@lg {
+		--span: 11;
+	}
+	.col-start-11\@lg {
+		grid-column-start: 11;
+	}
+	.col-end-12\@lg {
+		grid-column-end: 12;
+	}
+	.col-12\@lg {
+		--span: 12;
+	}
+	.col-start-12\@lg {
+		grid-column-start: 12;
+	}
+	.col-end-13\@lg {
+		grid-column-end: 13;
+	}
+	.col-start\@lg {
+		grid-column-start: 1;
+	}
+	.col-end\@lg {
+		grid-column-end: -1;
+	}
+	.col-start-auto\@lg {
+		grid-column-start: auto;
+	}
+	.col-end-auto\@lg {
+		grid-column-end: auto;
+	}
+}
+
+@media (min-width: 90rem) {
+	.grid-auto-xs\@xl {
+		--col-min-width: 8rem;
+	}
+	.grid-auto-sm\@xl {
+		--col-min-width: 10rem;
+	}
+	.grid-auto-md\@xl {
+		--col-min-width: 15rem;
+	}
+	.grid-auto-lg\@xl {
+		--col-min-width: 20rem;
+	}
+	.grid-auto-xl\@xl {
+		--col-min-width: 25rem;
+	}
+	.grid-auto-cols\@xl {
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+	}
+	.col-1\@xl {
+		--span: 1;
+	}
+	.col-start-1\@xl {
+		grid-column-start: 1;
+	}
+	.col-end-2\@xl {
+		grid-column-end: 2;
+	}
+	.col-2\@xl {
+		--span: 2;
+	}
+	.col-start-2\@xl {
+		grid-column-start: 2;
+	}
+	.col-end-3\@xl {
+		grid-column-end: 3;
+	}
+	.col-3\@xl {
+		--span: 3;
+	}
+	.col-start-3\@xl {
+		grid-column-start: 3;
+	}
+	.col-end-4\@xl {
+		grid-column-end: 4;
+	}
+	.col-4\@xl {
+		--span: 4;
+	}
+	.col-start-4\@xl {
+		grid-column-start: 4;
+	}
+	.col-end-5\@xl {
+		grid-column-end: 5;
+	}
+	.col-5\@xl {
+		--span: 5;
+	}
+	.col-start-5\@xl {
+		grid-column-start: 5;
+	}
+	.col-end-6\@xl {
+		grid-column-end: 6;
+	}
+	.col-6\@xl {
+		--span: 6;
+	}
+	.col-start-6\@xl {
+		grid-column-start: 6;
+	}
+	.col-end-7\@xl {
+		grid-column-end: 7;
+	}
+	.col-7\@xl {
+		--span: 7;
+	}
+	.col-start-7\@xl {
+		grid-column-start: 7;
+	}
+	.col-end-8\@xl {
+		grid-column-end: 8;
+	}
+	.col-8\@xl {
+		--span: 8;
+	}
+	.col-start-8\@xl {
+		grid-column-start: 8;
+	}
+	.col-end-9\@xl {
+		grid-column-end: 9;
+	}
+	.col-9\@xl {
+		--span: 9;
+	}
+	.col-start-9\@xl {
+		grid-column-start: 9;
+	}
+	.col-end-10\@xl {
+		grid-column-end: 10;
+	}
+	.col-10\@xl {
+		--span: 10;
+	}
+	.col-start-10\@xl {
+		grid-column-start: 10;
+	}
+	.col-end-11\@xl {
+		grid-column-end: 11;
+	}
+	.col-11\@xl {
+		--span: 11;
+	}
+	.col-start-11\@xl {
+		grid-column-start: 11;
+	}
+	.col-end-12\@xl {
+		grid-column-end: 12;
+	}
+	.col-12\@xl {
+		--span: 12;
+	}
+	.col-start-12\@xl {
+		grid-column-start: 12;
+	}
+	.col-end-13\@xl {
+		grid-column-end: 13;
+	}
+	.col-start\@xl {
+		grid-column-start: 1;
+	}
+	.col-end\@xl {
+		grid-column-end: -1;
+	}
+	.col-start-auto\@xl {
+		grid-column-start: auto;
+	}
+	.col-end-auto\@xl {
+		grid-column-end: auto;
+	}
+}
+
+/*# sourceMappingURL=style.css.map */
