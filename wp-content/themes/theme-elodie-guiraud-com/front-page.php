@@ -18,15 +18,22 @@ get_header();
 	<main id="primary" class="site-main">
 	<nav id="site-navigation" class="main-navigation">
 		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'theme-elodie-guiraud-com' ); ?></button>
-		<?php
-		wp_nav_menu(
-			array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			)
-		);
-		?>
+		<div class="navigationFrame">
+			<span class="circleIn">&nbsp;</span>
+			<span class="circleOut">&nbsp;</span>
+			<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					)
+				);
+			?>
+
+		</div>
 	</nav><!-- #site-navigation -->	
+
+
 		<?php
 		while ( have_posts() ) :
 			the_post();

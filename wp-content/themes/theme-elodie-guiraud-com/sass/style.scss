@@ -101,6 +101,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------- */
 @import "utilities/alignments";
 
+/* Positions
+--------------------------------------------- */
+@import "utilities/positions";
+
 /* Grid
 --------------------------------------------- */
 @import "../node_modules/flashgrid/dist/flashgrid.scss";
+

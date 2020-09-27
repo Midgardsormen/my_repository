@@ -8,6 +8,7 @@
     "WordPress",
     "Theme"
   ],
+  "type": "module",
   "homepage": "https://github.com/Automattic/_s#readme",
   "repository": {
     "type": "git",
